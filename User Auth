@@ -1,0 +1,30 @@
+Firebase Signup: 
+
+myRootRef.createUser("s@s.com", password: "s", withValueCompletionBlock: {error, auth in
+            if error != nil {
+                
+                print("error signing up")
+            } else {
+                
+                let uid = auth["uid"] as! String
+                print("successfull with UID: " + uid)
+                
+            }
+        })
+        
+---
+
+Firebase Login: 
+
+myRootRef.authUser("s@s.com", password: "s", withCompletionBlock: {error, auth in
+            if error != nil {
+                
+            } else {
+                let uid = auth.uid as String
+                
+                print(uid)
+            }
+        })
+        
+---
+
